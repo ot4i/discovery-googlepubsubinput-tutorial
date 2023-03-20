@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmApplicationConnectorInput_googlepubsub.msgnode="ComIbmApplicationConnectorInput_googlepubsub.msgnode" xmlns:ComIbmTrace.msgnode="ComIbmTrace.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="ExampleGoogleCloudPubSubInputFlow.msgflow" nsPrefix="ExampleGoogleCloudPubSubInputFlow.msgflow">
+  <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1" nodeLayoutStyle="RECTANGLE">
+    <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
+    <translation xmi:type="utility:TranslatableString" key="ExampleGoogleCloudPubSubInputFlow" bundleName="ExampleGoogleCloudPubSubInputFlow" pluginId="ExampleGoogleCloudPubSubInput"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/ExampleGoogleCloudPubSubInput/icons/full/obj16/ExampleGoogleCloudPubSubInputFlow.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/ExampleGoogleCloudPubSubInput/icons/full/obj30/ExampleGoogleCloudPubSubInputFlow.gif"/>
+    <composition>
+      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="338,20" destination="file" filePath="C:\temp\TraceExampleGoogleCloudPubSubInputFlowFailure.txt" pattern="========== Trace Generated at ${CURRENT_TIMESTAMP} ==========&#xD;&#xA;${Root}&#xD;&#xA;${LocalEnvironment}&#xD;&#xA;${ExceptionList}&#xD;&#xA;==================================================">
+        <translation xmi:type="utility:ConstantString" string="TraceFailure"/>
+      </nodes>
+      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="339,129" destination="file" filePath="C:\temp\TraceExampleGoogleCloudPubSubInputFlowCatch.txt" pattern="========== Trace Generated at ${CURRENT_TIMESTAMP} ==========&#xD;&#xA;${Root}&#xD;&#xA;${LocalEnvironment}&#xD;&#xA;${ExceptionList}&#xD;&#xA;==================================================">
+        <translation xmi:type="utility:ConstantString" string="TraceNoData"/>
+      </nodes>
+      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="338,74" destination="file" filePath="C:\temp\TraceExampleGoogleCloudPubSubInputFlowOut.txt" pattern="========== Trace Generated at ${CURRENT_TIMESTAMP} ==========&#xD;&#xA;${Root}&#xD;&#xA;${LocalEnvironment}&#xD;&#xA;${ExceptionList}&#xD;&#xA;==================================================">
+        <translation xmi:type="utility:ConstantString" string="TraceOut"/>
+      </nodes>
+      <nodes xmi:type="ComIbmApplicationConnectorInput_googlepubsub.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_5" location="105,73" applicationConnectorType="googlepubsub">
+        <translation xmi:type="utility:ConstantString" string="Google Cloud Pub/Sub Input"/>
+      </nodes>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.catch" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_5" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_6" targetNode="FCMComposite_1_1" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.in"/>
+    </composition>
+    <propertyOrganizer/>
+    <stickyBoard/>
+  </eClassifiers>
+</ecore:EPackage>
